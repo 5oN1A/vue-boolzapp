@@ -46,12 +46,12 @@
 
                 <ul class="contacts-list sidebar-chat-list">
                     
-                     <li v-for="(contact, index) in contacts" @click="activateChat(contact)">
+                     <li v-for="contact in contacts" @click="activateChat(contact)">
                         <img class="avatar" :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
                         <div>
                             <h2>{{ contact.name }}</h2>
-                            <p></p>
-                        </div>
+                         <p>{{ getLastMessage(contact.messages) }}</p>
+                      </div>
                         <div class="last-access">
                             10/01/2020 16:15:22
                         </div>
@@ -68,9 +68,9 @@
             <section class="chat-section">
                 <div class="nav-bar">
                     <ul>
-                        <li><a href="#"> <img class="nav-avatar" src="img/avatar_1.jpg" alt=""></a></li>
+                        <li><a href="#"> <img class="nav-avatar" :src="'img/avatar' + currentChat.avatar + '.jpg'" alt=""></a></li>
                         <li class="user-name">
-                            <h3>Michele</h3>
+                            <h3>{{ currentChat.name }}</h3>
                             <p>Ultimo accesso oggi alle 10/01/2020 16:15:22</p>
                         </li>
                         <li><a href="#"><i class="fas fa-search"></i></a></li>

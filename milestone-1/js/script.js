@@ -3,7 +3,6 @@ new Vue({
     el: "#root",
     data: {
         contacts: [
-
             {
                 name: 'Michele',
                 avatar: '_1',
@@ -34,7 +33,7 @@ new Vue({
                 messages: [
                     {
                         date: '20/03/2020 16:30:00',
-                        text: 'Ciao come stai?',
+                        text: 'messages come stai?',
                         status: 'sent'
                     },
                     {
@@ -98,26 +97,28 @@ new Vue({
     methods: {
 
 
-      getLastMessage (messages) {
-            if (messages.length) === 0) {
+        getLastMessage(messages) {
+
+            if (messages.length === 0) {
                 return "";
             }
-            let message = messages(messages.length - 1).text;
 
-            return message.slice(0,10);
-    },
+            let message = messages[messages.length - 1].text;
+
+            return message;
+
+
+        },
 
 
 
-   /*  activateChat(activeChat) {
+        activateChat(activechat) {
 
-       this.currentChat = activeChat;
+            this.currentChat = activechat;
 
-        console.log(activeChat);
+        },
+
+
     }
- */
 
-
- }
- 
 });
