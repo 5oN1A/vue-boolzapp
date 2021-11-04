@@ -17,7 +17,7 @@
 <body>
     <div class="outer-shell">
         <div class="green-strip"></div>
-        <main class="">
+        <main id="root">
 
             <!----------------- SIDEBAR ------------------>
             <section class="sidebar">
@@ -45,18 +45,17 @@
 
 
                 <ul class="contacts-list sidebar-chat-list">
-                    <li>
-                        <img class="avatar" src="img/avatar_1.jpg" alt="Michele">
+                    
+                     <li v-for="(contact, index) in contacts">
+                        <img class="avatar" :src="'img/avatar' + contact.avatar + '.jpg'" alt="Michele">
                         <div>
-                            <h2>Michele</h2>
+                            <h2>{{ contact.name }}</h2>
                             <p>Tutto fatto!...</p>
                         </div>
                         <div class="last-access">
                             10/01/2020 16:15:22
                         </div>
                     </li>
-
-
 
                 </ul>
 

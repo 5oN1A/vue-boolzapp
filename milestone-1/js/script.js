@@ -1,9 +1,9 @@
-Vue.config.devtools = true;
 
 new Vue({
     el: "#root",
     data: {
         contacts: [
+
             {
                 name: 'Michele',
                 avatar: '_1',
@@ -24,8 +24,9 @@ new Vue({
                         text: 'Tutto fatto!',
                         status: 'received'
                     }
-                ],
+                ]
             },
+
             {
                 name: 'Fabio',
                 avatar: '_2',
@@ -46,8 +47,9 @@ new Vue({
                         text: 'Mi piacerebbe ma devo andare a fare la spesa.',
                         status: 'sent'
                     }
-                ],
+                ]
             },
+
             {
                 name: 'Samuele',
                 avatar: '_3',
@@ -68,7 +70,7 @@ new Vue({
                         text: 'Ah scusa!',
                         status: 'received'
                     }
-                ],
+                ]
             },
             {
                 name: 'Luisa',
@@ -85,14 +87,18 @@ new Vue({
                         text: 'Si, ma preferirei andare al cinema',
                         status: 'received'
                     }
-                ],
-            },
+                ]
+            }
         ]
 
     },
 
     methods: {
+    },
 
-    }
+
+
+
+
 
 });
