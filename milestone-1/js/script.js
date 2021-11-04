@@ -89,16 +89,35 @@ new Vue({
                     }
                 ]
             }
-        ]
+        ],
+
+        currentChat: {}
 
     },
 
     methods: {
+
+
+      getLastMessage (messages) {
+            if (messages.length) === 0) {
+                return "";
+            }
+            let message = messages(messages.length - 1).text;
+
+            return message.slice(0,10);
     },
 
 
 
+   /*  activateChat(activeChat) {
+
+       this.currentChat = activeChat;
+
+        console.log(activeChat);
+    }
+ */
 
 
-
+ }
+ 
 });

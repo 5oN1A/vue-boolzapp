@@ -46,11 +46,11 @@
 
                 <ul class="contacts-list sidebar-chat-list">
                     
-                     <li v-for="(contact, index) in contacts">
-                        <img class="avatar" :src="'img/avatar' + contact.avatar + '.jpg'" alt="Michele">
+                     <li v-for="(contact, index) in contacts" @click="activateChat(contact)">
+                        <img class="avatar" :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
                         <div>
                             <h2>{{ contact.name }}</h2>
-                            <p>Tutto fatto!...</p>
+                            <p></p>
                         </div>
                         <div class="last-access">
                             10/01/2020 16:15:22
