@@ -1,4 +1,6 @@
 Vue.config.devtools = true;
+dayjs.extend(window.dayjs_plugin_relativeTime);
+dayjs.extend(window.dayjs_plugin_localizedFormat);
 
 new Vue({
     el: "#root",
@@ -114,9 +116,8 @@ new Vue({
             ]
         },
 
-        newSentMsg:"",
-
-        today : new Date()
+        newSentMsg: "",
+        searchChat: "",
 
     },
 
@@ -143,40 +144,51 @@ new Vue({
         },
 
         createNewMsgObject() {
-            
+
             //se stringa vuota: stop!
             if (this.newSentMsg.trim() === "") {
                 return;
             }
 
-            let newMsgObject =  {
-                date: '10/01/2020 15:30:55',
+            let newMsgObject = {
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                 text: this.newSentMsg.trim(),
                 status: 'sent'
             }
-           
+
             this.currentChat.messages.push(newMsgObject);
 
             this.newSentMsg = "";
 
             setTimeout(() => {
 
-              
-                let newMyMsgObject =  {
-                    date: '10/01/2020 16:15:22',
+
+                let newMyMsgObject = {
+                    date: dayjs().from(dayjs()),
                     text: "ok",
                     status: 'received'
                 }
 
                 this.currentChat.messages.push(newMyMsgObject);
 
-            },1000)
+            }, 1000)
+
+        },
+
+        contactNameFilter() {
+
+            return this.contacts.filter((contact) => { 
+                
+                
+                return contact.name.toLowerCase().includes(this.searchChat.toLowerCase().trim());
+            });
+
 
         },
 
 
 
-        
+
 
 
     }
