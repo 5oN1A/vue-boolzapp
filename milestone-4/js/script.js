@@ -29,6 +29,7 @@ new Vue({
                 ]
             },
 
+
             {
                 name: 'Fabio',
                 avatar: '_2',
@@ -177,9 +178,9 @@ new Vue({
 
         contactNameFilter() {
 
-            return this.contacts.filter((contact) => { 
-                
-                
+            return this.contacts.filter((contact) => {
+
+
                 return contact.name.toLowerCase().includes(this.searchChat.toLowerCase().trim());
             });
 
